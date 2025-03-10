@@ -8,10 +8,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Search } from "lucide-react"
 import quranData from "@/data/quran.json"
 import type { QuranVerse } from "@/types/quran"
+import type { WordAnalysis } from "@/lib/quran-analytics"
 
 export default function QuranWordAnalysis() {
   const [searchWord, setSearchWord] = useState("")
-  const [searchResults, setSearchResults] = useState<any>(null)
+  const [searchResults, setSearchResults] = useState<WordAnalysis | null>(null)
   const [commonWords, setCommonWords] = useState<[string, number][]>([])
   const [isLoading, setIsLoading] = useState(false)
 
@@ -146,7 +147,7 @@ export default function QuranWordAnalysis() {
 
                     {searchResults.occurrenceCount > 10 && (
                       <div className="text-center text-muted-foreground">
-                        Showing 10 of {searchResults.occurrenceCount} verses containing "{searchResults.word}"
+                        Showing 10 of {searchResults.occurrenceCount} verses containing &quot;{searchResults.word}&quot;
                       </div>
                     )}
                   </div>

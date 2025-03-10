@@ -5,11 +5,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import quranData from "@/data/quran.json"
+import type { SuraStats } from "@/lib/quran-analytics"
 
 export default function QuranAnalytics() {
   const [selectedSura, setSelectedSura] = useState<number>(1)
   const [suraList, setSuraList] = useState<{ no: number; name: string; arabic: string }[]>([])
-  const [suraStats, setSuraStats] = useState<any>(null)
+  const [suraStats, setSuraStats] = useState<SuraStats | null>(null)
 
   useEffect(() => {
     // Extract unique suras for the dropdown
