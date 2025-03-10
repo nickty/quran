@@ -91,9 +91,7 @@ export default function QuranSearch() {
                     <span>Ayah {verse.aya_no}</span>
                   </div>
 
-                  <div className="text-right mb-2 text-xl font-arabic">{verse.aya_text || verse.aya_text_emlaey}</div>
-
-                  <div>{verse.aya_text_emlaey}</div>
+                  <div className="text-right mb-2 text-xl font-arabic">{verse.aya_text_emlaey}</div>
                 </CardContent>
               </Card>
             ))}
