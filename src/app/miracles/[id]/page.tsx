@@ -380,13 +380,13 @@ export default async function MiracleDetailPage({
         <div className="rounded-lg overflow-hidden mb-8 bg-card shadow-md">
           <div className="relative h-[200px] md:h-[300px] w-full overflow-hidden">
             <div className="absolute inset-0 flex items-center justify-center">
-              <Image
+              {/* <Image
                 src={miracleData.image || "/placeholder.svg"}
                 alt={miracleData.title}
                 width={600}
                 height={400}
                 className="w-full h-full object-cover"
-              />
+              /> */}
 
               {/* Decorative elements based on the miracle type */}
               {id === "114-surahs" && (

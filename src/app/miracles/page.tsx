@@ -113,13 +113,13 @@ export default function MiraclesPage() {
                 className={`h-full overflow-hidden hover:shadow-md transition-shadow cursor-pointer ${miracle.bgPattern}`}
               >
                 <div className="aspect-video relative overflow-hidden">
-                  <Image
+                  {/* <Image
                     src={miracle.image || "/placeholder.svg"}
                     alt={miracle.title}
                     width={400}
                     height={200}
                     className="object-cover w-full h-full"
-                  />
+                  /> */}
                   {miracle.featured && (
                     <div className="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded-full flex items-center">
                       <Star className="h-3 w-3 mr-1" />
