@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowLeft, Star } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
+// import Image from "next/image"
 
 // This would typically come from a database or API
 const getMiracleData = async (id: string) => {
