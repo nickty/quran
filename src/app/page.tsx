@@ -2,6 +2,7 @@ import QuranDashboard from "@/components/quran-dashboard"
 import QuranAnalytics from "@/components/quran-analytics"
 import QuranSearch from "@/components/quran-search"
 import QuranWordAnalysis from "@/components/quran-word-analysis"
+import QuranNumericalMiracles from "@/components/quran-numerical-miracles"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default function Home() {
@@ -13,10 +14,11 @@ export default function Home() {
       </p>
 
       <Tabs defaultValue="dashboard" className="w-full">
-        <TabsList className="grid w-full grid-cols-4">
+        <TabsList className="grid w-full grid-cols-5">
           <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
           <TabsTrigger value="analytics">Analytics</TabsTrigger>
           <TabsTrigger value="word-analysis">Word Analysis</TabsTrigger>
+          <TabsTrigger value="numerical-miracles">Numerical Miracles</TabsTrigger>
           <TabsTrigger value="search">Search</TabsTrigger>
         </TabsList>
         <TabsContent value="dashboard" className="mt-6">
@@ -27,6 +29,9 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="word-analysis" className="mt-6">
           <QuranWordAnalysis />
+        </TabsContent>
+        <TabsContent value="numerical-miracles" className="mt-6">
+          <QuranNumericalMiracles />
         </TabsContent>
         <TabsContent value="search" className="mt-6">
           <QuranSearch />
