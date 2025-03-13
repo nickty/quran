@@ -9,11 +9,18 @@ export interface QuranStats {
   versesPerSura: {
     suraNo: number
     suraName: string
+    suraNameAr: string
     verseCount: number
+    wordCount: number
+    charCount: number
   }[]
   longestVerse: QuranVerse | null
   shortestVerse: QuranVerse | null
   juzCount: number
+  verseLengthDistribution: { name: string; value: number }[]
+  versesPerSuraDistribution: { name: string; value: number }[]
+  wordsPerSuraDistribution: { name: string; value: number }[]
+  charsPerSuraDistribution: { name: string; value: number }[]
 }
 
 export interface WordFrequency {
