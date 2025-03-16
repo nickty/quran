@@ -20,22 +20,22 @@ export default function AboutPage() {
             <Card className="overflow-hidden">
               <div className="aspect-square relative overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=400&width=400"
-                  alt="Your Name"
+                  src="/mizan.jpg?height=400&width=400"
+                  alt="Mizanur Rahman"
                   width={400}
                   height={400}
                   className="object-cover w-full h-full"
                 />
               </div>
               <CardHeader>
-                <CardTitle>Your Name</CardTitle>
+                <CardTitle>Mizanur Rahman</CardTitle>
                 <CardDescription>Quran Researcher & Developer</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center">
                   <Mail className="h-4 w-4 mr-2 text-primary" />
-                  <a href="mailto:your.email@example.com" className="hover:underline">
-                    your.email@example.com
+                  <a href="mailto:nurmizanrah@gmail.com" className="hover:underline">
+                    nurmizanrah@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center">
@@ -44,19 +44,19 @@ export default function AboutPage() {
                 </div>
                 <div className="flex flex-wrap gap-2 mt-4">
                   <Button variant="outline" size="sm" className="gap-2" asChild>
-                    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/nickty" target="_blank" rel="noopener noreferrer">
                       <Github className="h-4 w-4" />
                       GitHub
                     </a>
                   </Button>
                   <Button variant="outline" size="sm" className="gap-2" asChild>
-                    <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/mizanur-rahman-a808082a/" target="_blank" rel="noopener noreferrer">
                       <Linkedin className="h-4 w-4" />
                       LinkedIn
                     </a>
                   </Button>
                   <Button variant="outline" size="sm" className="gap-2" asChild>
-                    <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
+                    <a href="https://twitter.com/nickty008" target="_blank" rel="noopener noreferrer">
                       <Twitter className="h-4 w-4" />
                       Twitter
                     </a>
@@ -76,8 +76,8 @@ export default function AboutPage() {
               <CardContent className="space-y-4">
                 <p>
                   I am a dedicated researcher focused on exploring the mathematical and scientific aspects of the Holy
-                  Quran. With a background in [Your Background], I have been studying the numerical patterns and
-                  mathematical structure of the Quran for [X years].
+                  Quran. With a background in computer science, I have been studying the numerical patterns and
+                  mathematical structure of the Quran since 2016.
                 </p>
                 <p>
                   My research interests include numerical miracles in religious texts, computational linguistics applied
@@ -86,7 +86,7 @@ export default function AboutPage() {
                   studies.
                 </p>
                 <p>
-                  I am currently working on [Current Project/Research], and I welcome collaboration with other
+                  I am currently working on mathemetics miracles of Quran, and I welcome collaboration with other
                   researchers in this field.
                 </p>
               </CardContent>
@@ -154,7 +154,7 @@ export default function AboutPage() {
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <Button className="w-full gap-2" asChild>
-                    <a href="mailto:your.email@example.com">
+                    <a href="mailto:nurmizanrah@gmail.com">
                       <Mail className="h-4 w-4" />
                       Email Me
                     </a>
