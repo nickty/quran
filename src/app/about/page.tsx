@@ -38,10 +38,10 @@ export default function AboutPage() {
                     nurmizanrah@gmail.com
                   </a>
                 </div>
-                <div className="flex items-center">
+                {/* <div className="flex items-center">
                   <span className="text-primary font-medium">Phone:</span>
                   <span className="ml-2">+1 (234) 567-8901</span>
-                </div>
+                </div> */}
                 <div className="flex flex-wrap gap-2 mt-4">
                   <Button variant="outline" size="sm" className="gap-2" asChild>
                     <a href="https://github.com/nickty" target="_blank" rel="noopener noreferrer">

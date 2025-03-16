@@ -48,7 +48,7 @@ export default function ContactCard() {
             <p className="text-sm">
               I am a dedicated researcher focused on exploring the mathematical and scientific aspects of the Holy
               Quran. With a background in computer science, I have been studying the numerical patterns and mathematical
-              structure of the Quran since 2009.
+              structure of the Quran since 2016.
             </p>
             <div className="flex flex-wrap gap-2">
               <Button size="sm" className="gap-1" asChild>
