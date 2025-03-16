@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Calculator, BookOpen, ChevronRight, Star, ArrowRight } from "lucide-react"
 import Link from "next/link"
+import ContactCard from "@/components/contact-card"
 
 export default function QuranHomepage() {
   const [showCalculation, setShowCalculation] = useState<Record<string, boolean>>({
@@ -366,6 +367,9 @@ export default function QuranHomepage() {
           </Card>
         </div>
       </div>
+
+      {/* Contact Card */}
+      <ContactCard />
 
       {/* More Miracles Coming Soon */}
       <Card className="bg-muted/30">

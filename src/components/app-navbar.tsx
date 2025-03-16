@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Calculator, ChevronDown, Home, Menu, Search, BarChart, Star, X } from "lucide-react"
+import { Calculator, ChevronDown, Home, Menu, Search, BarChart, Star, User, X } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { cn } from "@/lib/utils"
 import { ModeToggle } from "@/components/mode-toggle"
@@ -45,6 +45,11 @@ export function AppNavbar() {
       name: "Search",
       path: "/?tab=search",
       icon: <Search className="h-4 w-4 mr-2" />,
+    },
+    {
+      name: "About/Contact",
+      path: "/about",
+      icon: <User className="h-4 w-4 mr-2" />,
     },
   ]
 
