@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/miracles/number-19",
     "/miracles/word-count",
     "/miracles/golden-ratio",
+    "/miracles/al-fatiha", // Add the new Al-Fatiha miracle page
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

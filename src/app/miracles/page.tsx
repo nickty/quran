@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button"
 import { ChevronRight, Star } from "lucide-react"
 import Link from "next/link"
-// import Image from "next/image"
+import Image from "next/image"
 
 export default function MiraclesPage() {
   // List of miracles
@@ -61,6 +61,21 @@ export default function MiraclesPage() {
         { label: "Occurrences", value: "Multiple" },
       ],
     },
+    {
+      id: "al-fatiha",
+      title: "Mathematical Structure of Al-Fatiha",
+      description: "Discover the numerical patterns in the opening chapter of the Quran.",
+      featured: true,
+      image: "/placeholder.svg?height=200&width=400",
+      bgPattern:
+        "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-background to-background",
+      stats: [
+        { label: "Verses", value: "7" },
+        { label: "Words", value: "29" },
+        { label: "Letters", value: "139" },
+        { label: "Prime Numbers", value: "3" },
+      ],
+    },
   ]
 
   return (
@@ -113,13 +128,13 @@ export default function MiraclesPage() {
                 className={`h-full overflow-hidden hover:shadow-md transition-shadow cursor-pointer ${miracle.bgPattern}`}
               >
                 <div className="aspect-video relative overflow-hidden">
-                  {/* <Image
+                  <Image
                     src={miracle.image || "/placeholder.svg"}
                     alt={miracle.title}
                     width={400}
                     height={200}
                     className="object-cover w-full h-full"
-                  /> */}
+                  />
                   {miracle.featured && (
                     <div className="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded-full flex items-center">
                       <Star className="h-3 w-3 mr-1" />

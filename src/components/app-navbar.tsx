@@ -29,6 +29,7 @@ export function AppNavbar() {
         { name: "Number 19", path: "/miracles/number-19" },
         { name: "Word Count", path: "/miracles/word-count" },
         { name: "Golden Ratio", path: "/miracles/golden-ratio" },
+        { name: "Al Fatiha", path: "/miracles/al-fatiha" },
       ],
     },
     {
