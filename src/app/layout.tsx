@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import { Suspense } from "react"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { AppNavbar } from "@/components/app-navbar"
@@ -70,8 +71,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          {/* Add Google Analytics */}
-          <GoogleAnalytics />
+          {/* Add Google Analytics with Suspense */}
+          <Suspense fallback={null}>
+            <GoogleAnalytics />
+          </Suspense>
           <AppNavbar />
           {children}
         </ThemeProvider>
