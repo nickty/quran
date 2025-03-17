@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ChevronRight, Star, Code, Calculator } from "lucide-react"
+import { ChevronRight, Star, Code, Calculator, BookOpen } from "lucide-react"
 import Link from "next/link"
 
 export default function MiraclesPage() {
@@ -11,7 +11,6 @@ export default function MiraclesPage() {
       title: "The Miracle of 114 Surahs",
       description: "Perfect balance in the structure of the Quran with even and odd numbers.",
       featured: true,
-      image: "/placeholder.svg?height=200&width=400",
       bgPattern:
         "bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-background to-background",
       stats: [
@@ -26,7 +25,6 @@ export default function MiraclesPage() {
       title: "Computational Analysis",
       description: "Exploring numerical patterns using modern computational methods and data analysis.",
       featured: true,
-      image: "/placeholder.svg?height=200&width=400",
       bgPattern:
         "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-100/30 via-background to-background dark:from-blue-900/20",
       stats: [
@@ -37,11 +35,24 @@ export default function MiraclesPage() {
       ],
     },
     {
+      id: "golden-ratio-study",
+      title: "The Golden Ratio in Sacred Texts",
+      description: "A comparative study of the divine proportion across religious texts.",
+      featured: true,
+      bgPattern:
+        "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/30 via-background to-background dark:from-amber-900/20",
+      stats: [
+        { label: "Golden Ratio (φ)", value: "1.618..." },
+        { label: "Sacred Texts", value: "7" },
+        { label: "Time Periods", value: "3,000+ years" },
+        { label: "Statistical Significance", value: "p < 0.001" },
+      ],
+    },
+    {
       id: "number-19",
       title: "The Number 19 Pattern",
       description: "The mathematical code based on the number 19 throughout the Quran.",
       featured: false,
-      image: "/placeholder.svg?height=200&width=400",
       bgPattern:
         "bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-background to-background",
       stats: [
@@ -54,7 +65,6 @@ export default function MiraclesPage() {
       title: "Word Count Symmetry",
       description: "Symmetrical patterns in the count of specific words in the Quran.",
       featured: false,
-      image: "/placeholder.svg?height=200&width=400",
       bgPattern:
         "bg-[linear-gradient(to_right,_var(--tw-gradient-stops))] from-secondary/10 via-background to-background",
       stats: [
@@ -67,7 +77,6 @@ export default function MiraclesPage() {
       title: "Golden Ratio in the Quran",
       description: "The presence of the divine proportion (1.618) in the Quran's structure.",
       featured: false,
-      image: "/placeholder.svg?height=200&width=400",
       bgPattern:
         "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/30 via-background to-background dark:from-amber-900/20",
       stats: [
@@ -80,7 +89,6 @@ export default function MiraclesPage() {
       title: "Mathematical Structure of Al-Fatiha",
       description: "Discover the numerical patterns in the opening chapter of the Quran.",
       featured: true,
-      image: "/placeholder.svg?height=200&width=400",
       bgPattern:
         "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-background to-background",
       stats: [
@@ -142,16 +150,7 @@ export default function MiraclesPage() {
                 className={`h-full overflow-hidden hover:shadow-md transition-shadow cursor-pointer ${miracle.bgPattern}`}
               >
                 <div className="aspect-video relative overflow-hidden">
-                  {/* Replace this Image component */}
-                  {/* <Image
-                    src={miracle.image || "/placeholder.svg"}
-                    alt={miracle.title}
-                    width={400}
-                    height={200}
-                    className="object-cover w-full h-full"
-                  /> */}
-
-                  {/* With this colored background div */}
+                  {/* Colored background div */}
                   <div
                     className={`aspect-video w-full ${miracle.bgPattern || "bg-primary/5"} flex items-center justify-center`}
                   >
@@ -167,6 +166,15 @@ export default function MiraclesPage() {
                         <div className="flex items-center gap-2">
                           <Code className="h-6 w-6 text-blue-600" />
                           <Calculator className="h-6 w-6 text-blue-600" />
+                        </div>
+                      </div>
+                    )}
+
+                    {miracle.id === "golden-ratio-study" && (
+                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
+                        <div className="flex items-center gap-2">
+                          <div className="text-2xl font-bold text-amber-600">φ</div>
+                          <BookOpen className="h-6 w-6 text-amber-600" />
                         </div>
                       </div>
                     )}
@@ -201,8 +209,6 @@ export default function MiraclesPage() {
                       Featured
                     </div>
                   )}
-
-                  {/* Decorative elements based on the miracle type */}
                 </div>
                 <CardHeader>
                   <CardTitle>{miracle.title}</CardTitle>
