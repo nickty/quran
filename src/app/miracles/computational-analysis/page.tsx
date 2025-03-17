@@ -202,7 +202,7 @@ export default function ComputationalAnalysisPage() {
                   <CardContent className="h-[400px]">
                     <div className="h-full flex flex-col">
                       <div className="relative flex-1">
-                        <div className="absolute inset-0 flex items-end">
+                        <div className="absolute inset-0 flex">
                           {[
                             { letter: "ا", count: 48440 },
                             { letter: "ل", count: 38102 },
