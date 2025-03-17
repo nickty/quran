@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowLeft, Star } from "lucide-react"
 import Link from "next/link"
-// import Image from "next/image"
+import Script from "next/script"
+import { generateStructuredData } from "@/components/structured-data"
 
 // This would typically come from a database or API
 const getMiracleData = async (id: string) => {
@@ -361,10 +362,18 @@ export default async function MiracleDetailPage({
     }
   }
 
+  const structuredData = generateStructuredData("miracle", miracleData)
+
   return (
     <>
       {/* Decorative background pattern */}
-      <div className={`absolute inset-0 -z-10 ${miracleData.bgPattern}`}></div>
+      <div className={`absolute inset-0 -z-10 ${miracleData.bgPattern}`}>
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </div>
 
       <div className="container mx-auto px-4 py-8">
         <div className="mb-6">
@@ -380,58 +389,54 @@ export default async function MiracleDetailPage({
         <div className="rounded-lg overflow-hidden mb-8 bg-card shadow-md">
           <div className="relative h-[200px] md:h-[300px] w-full overflow-hidden">
             <div className="absolute inset-0 flex items-center justify-center">
-              {/* <Image
-                src={miracleData.image || "/placeholder.svg"}
-                alt={miracleData.title}
-                width={600}
-                height={400}
-                className="w-full h-full object-cover"
-              /> */}
-
-              {/* Decorative elements based on the miracle type */}
-              {id === "114-surahs" && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="grid grid-cols-2 gap-4 p-4 bg-background/80 rounded-lg backdrop-blur-sm">
-                    <div className="text-center">
-                      <div className="text-4xl font-bold text-primary">57</div>
-                      <div className="text-sm">Odd Numbers</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-4xl font-bold text-secondary">57</div>
-                      <div className="text-sm">Even Numbers</div>
+              {/* Replace this Image component */}
+              {/* With this colored background div */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                {/* Keep the decorative elements based on the miracle type */}
+                {id === "114-surahs" && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="grid grid-cols-2 gap-4 p-4 bg-background/80 rounded-lg backdrop-blur-sm">
+                      <div className="text-center">
+                        <div className="text-4xl font-bold text-primary">57</div>
+                        <div className="text-sm">Odd Numbers</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-4xl font-bold text-secondary">57</div>
+                        <div className="text-sm">Even Numbers</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
+                )}
 
-              {id === "number-19" && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-6 bg-background/80 rounded-lg backdrop-blur-sm">
-                    <div className="text-6xl font-bold text-primary">19</div>
-                    <div className="text-sm">The Key Number</div>
-                  </div>
-                </div>
-              )}
-
-              {id === "word-count" && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-6 bg-background/80 rounded-lg backdrop-blur-sm">
-                    <div className="text-4xl font-bold">
-                      <span className="text-primary">365</span> = <span className="text-secondary">365</span>
+                {id === "number-19" && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center p-6 bg-background/80 rounded-lg backdrop-blur-sm">
+                      <div className="text-6xl font-bold text-primary">19</div>
+                      <div className="text-sm">The Key Number</div>
                     </div>
-                    <div className="text-sm">Perfect Word Count Symmetry</div>
                   </div>
-                </div>
-              )}
+                )}
 
-              {id === "golden-ratio" && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-6 bg-background/80 rounded-lg backdrop-blur-sm">
-                    <div className="text-4xl font-bold text-amber-600">φ = 1.618</div>
-                    <div className="text-sm">The Divine Proportion</div>
+                {id === "word-count" && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center p-6 bg-background/80 rounded-lg backdrop-blur-sm">
+                      <div className="text-4xl font-bold">
+                        <span className="text-primary">365</span> = <span className="text-secondary">365</span>
+                      </div>
+                      <div className="text-sm">Perfect Word Count Symmetry</div>
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
+
+                {id === "golden-ratio" && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center p-6 bg-background/80 rounded-lg backdrop-blur-sm">
+                      <div className="text-4xl font-bold text-amber-600">φ = 1.618</div>
+                      <div className="text-sm">The Divine Proportion</div>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 

@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowLeft, Star } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 import Script from "next/script"
 import { generateStructuredData } from "@/components/structured-data"
 
@@ -74,16 +73,8 @@ export default async function AlFatihaMiraclePage() {
         <div className="rounded-lg overflow-hidden mb-8 bg-card shadow-md">
           <div className="relative h-[200px] md:h-[300px] w-full overflow-hidden">
             <div className="absolute inset-0 flex items-center justify-center">
-              <Image
-                src={miracleData.image || "/placeholder.svg"}
-                alt={miracleData.title}
-                width={600}
-                height={400}
-                className="w-full h-full object-cover"
-              />
-
-              {/* Decorative elements */}
-              <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute inset-0 bg-primary/5 flex items-center justify-center">
+                {/* Keep the decorative elements */}
                 <div className="text-center p-6 bg-background/80 rounded-lg backdrop-blur-sm">
                   <div className="grid grid-cols-3 gap-4">
                     <div className="text-center">
@@ -182,7 +173,7 @@ export default async function AlFatihaMiraclePage() {
                 <CardDescription>The symmetrical structure of Al-Fatiha</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="relative h-[500px] border rounded-lg p-4">
+                <div className="relative h-[300px] border rounded-lg p-4">
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
                     <div className="w-full max-w-md">
                       {/* Verse 1 */}

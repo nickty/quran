@@ -1,8 +1,7 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ChevronRight, Star } from "lucide-react"
+import { ChevronRight, Star, Code, Calculator } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 
 export default function MiraclesPage() {
   // List of miracles
@@ -20,6 +19,21 @@ export default function MiraclesPage() {
         { label: "Even Numbers", value: "57" },
         { label: "Sum of Odd", value: "6555" },
         { label: "Sum of Even", value: "6236" },
+      ],
+    },
+    {
+      id: "computational-analysis",
+      title: "Computational Analysis",
+      description: "Exploring numerical patterns using modern computational methods and data analysis.",
+      featured: true,
+      image: "/placeholder.svg?height=200&width=400",
+      bgPattern:
+        "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-100/30 via-background to-background dark:from-blue-900/20",
+      stats: [
+        { label: "Word Pairs", value: "15+" },
+        { label: "Statistical Significance", value: "p < 0.001" },
+        { label: "Methods", value: "NLP, Statistics" },
+        { label: "Data Points", value: "77,430+" },
       ],
     },
     {
@@ -128,13 +142,59 @@ export default function MiraclesPage() {
                 className={`h-full overflow-hidden hover:shadow-md transition-shadow cursor-pointer ${miracle.bgPattern}`}
               >
                 <div className="aspect-video relative overflow-hidden">
-                  <Image
+                  {/* Replace this Image component */}
+                  {/* <Image
                     src={miracle.image || "/placeholder.svg"}
                     alt={miracle.title}
                     width={400}
                     height={200}
                     className="object-cover w-full h-full"
-                  />
+                  /> */}
+
+                  {/* With this colored background div */}
+                  <div
+                    className={`aspect-video w-full ${miracle.bgPattern || "bg-primary/5"} flex items-center justify-center`}
+                  >
+                    {/* Keep the decorative elements based on the miracle type */}
+                    {miracle.id === "114-surahs" && (
+                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
+                        <div className="text-2xl font-bold">57 + 57 = 114</div>
+                      </div>
+                    )}
+
+                    {miracle.id === "computational-analysis" && (
+                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
+                        <div className="flex items-center gap-2">
+                          <Code className="h-6 w-6 text-blue-600" />
+                          <Calculator className="h-6 w-6 text-blue-600" />
+                        </div>
+                      </div>
+                    )}
+
+                    {miracle.id === "number-19" && (
+                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
+                        <div className="text-4xl font-bold text-primary">19</div>
+                      </div>
+                    )}
+
+                    {miracle.id === "word-count" && (
+                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
+                        <div className="text-xl font-bold">Day = 365</div>
+                      </div>
+                    )}
+
+                    {miracle.id === "golden-ratio" && (
+                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
+                        <div className="text-2xl font-bold text-amber-600">φ = 1.618</div>
+                      </div>
+                    )}
+
+                    {miracle.id === "al-fatiha" && (
+                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
+                        <div className="text-2xl font-bold">7 Verses</div>
+                      </div>
+                    )}
+                  </div>
                   {miracle.featured && (
                     <div className="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded-full flex items-center">
                       <Star className="h-3 w-3 mr-1" />
@@ -143,37 +203,6 @@ export default function MiraclesPage() {
                   )}
 
                   {/* Decorative elements based on the miracle type */}
-                  {miracle.id === "114-surahs" && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
-                        <div className="text-2xl font-bold">57 + 57 = 114</div>
-                      </div>
-                    </div>
-                  )}
-
-                  {miracle.id === "number-19" && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
-                        <div className="text-4xl font-bold text-primary">19</div>
-                      </div>
-                    </div>
-                  )}
-
-                  {miracle.id === "word-count" && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
-                        <div className="text-xl font-bold">Day = 365</div>
-                      </div>
-                    </div>
-                  )}
-
-                  {miracle.id === "golden-ratio" && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
-                        <div className="text-2xl font-bold text-amber-600">φ = 1.618</div>
-                      </div>
-                    </div>
-                  )}
                 </div>
                 <CardHeader>
                   <CardTitle>{miracle.title}</CardTitle>
