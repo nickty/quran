@@ -15,7 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/miracles/al-fatiha",
     "/miracles/computational-analysis",
     "/miracles/golden-ratio-study",
-    "/miracles/linguistic-symmetry", // Add the new linguistic symmetry page
+    "/miracles/linguistic-symmetry",
+    "/miracles/surah-rahman-pattern", // Add the new Surah Ar-Rahman pattern page
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

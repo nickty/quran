@@ -21,6 +21,20 @@ export default function MiraclesPage() {
       ],
     },
     {
+      id: "surah-rahman-pattern",
+      title: "Rhetorical Symmetry of Ar-Rahman",
+      description: "Analysis of the remarkable 31-fold repetition pattern in Surah Ar-Rahman.",
+      featured: true,
+      bgPattern:
+        "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green-50/30 via-background to-background dark:from-green-950/20",
+      stats: [
+        { label: "Repetitions", value: "31" },
+        { label: "Chapter Number", value: "55" },
+        { label: "Total Verses", value: "78" },
+        { label: "Symmetry Type", value: "Bilateral" },
+      ],
+    },
+    {
       id: "computational-analysis",
       title: "Computational Analysis",
       description: "Exploring numerical patterns using modern computational methods and data analysis.",
@@ -172,6 +186,12 @@ export default function MiraclesPage() {
                     {miracle.id === "114-surahs" && (
                       <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
                         <div className="text-2xl font-bold">57 + 57 = 114</div>
+                      </div>
+                    )}
+
+                    {miracle.id === "surah-rahman-pattern" && (
+                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
+                        <div className="text-xl font-bold text-green-600">31 Repetitions</div>
                       </div>
                     )}
 
