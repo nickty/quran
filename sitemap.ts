@@ -14,7 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/miracles/golden-ratio",
     "/miracles/al-fatiha",
     "/miracles/computational-analysis",
-    "/miracles/golden-ratio-study", // Add the new golden ratio study page
+    "/miracles/golden-ratio-study",
+    "/miracles/linguistic-symmetry", // Add the new linguistic symmetry page
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

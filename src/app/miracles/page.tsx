@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ChevronRight, Star, Code, Calculator, BookOpen } from "lucide-react"
+import { ChevronRight, Star, Code, Calculator, BookOpen, MessageSquare, Repeat } from "lucide-react"
 import Link from "next/link"
 
 export default function MiraclesPage() {
@@ -32,6 +32,20 @@ export default function MiraclesPage() {
         { label: "Statistical Significance", value: "p < 0.001" },
         { label: "Methods", value: "NLP, Statistics" },
         { label: "Data Points", value: "77,430+" },
+      ],
+    },
+    {
+      id: "linguistic-symmetry",
+      title: "Linguistic Symmetry",
+      description: "Analysis of rhetorical patterns and linguistic balance in Quranic discourse.",
+      featured: true,
+      bgPattern:
+        "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50/30 via-background to-background dark:from-blue-950/20",
+      stats: [
+        { label: "Ring Compositions", value: "29" },
+        { label: "Balanced Word Pairs", value: "47" },
+        { label: "Publication Year", value: "2022" },
+        { label: "Statistical Significance", value: "p < 0.001" },
       ],
     },
     {
@@ -166,6 +180,15 @@ export default function MiraclesPage() {
                         <div className="flex items-center gap-2">
                           <Code className="h-6 w-6 text-blue-600" />
                           <Calculator className="h-6 w-6 text-blue-600" />
+                        </div>
+                      </div>
+                    )}
+
+                    {miracle.id === "linguistic-symmetry" && (
+                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
+                        <div className="flex items-center gap-2">
+                          <MessageSquare className="h-6 w-6 text-blue-600" />
+                          <Repeat className="h-6 w-6 text-blue-600" />
                         </div>
                       </div>
                     )}
