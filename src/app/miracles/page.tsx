@@ -21,6 +21,20 @@ export default function MiraclesPage() {
       ],
     },
     {
+      id: "surah-ikhlas-structure",
+      title: "Mathematical Marvel of Al-Ikhlas",
+      description: "Exploring the numerical patterns in the 112th chapter of the Quran.",
+      featured: true,
+      bgPattern:
+        "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-50/30 via-background to-background dark:from-purple-950/20",
+      stats: [
+        { label: "Chapter", value: "112" },
+        { label: "Verses", value: "4" },
+        { label: "Words", value: "15" },
+        { label: "Letters", value: "47" },
+      ],
+    },
+    {
       id: "surah-rahman-pattern",
       title: "Rhetorical Symmetry of Ar-Rahman",
       description: "Analysis of the remarkable 31-fold repetition pattern in Surah Ar-Rahman.",
@@ -186,6 +200,12 @@ export default function MiraclesPage() {
                     {miracle.id === "114-surahs" && (
                       <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
                         <div className="text-2xl font-bold">57 + 57 = 114</div>
+                      </div>
+                    )}
+
+                    {miracle.id === "surah-ikhlas-structure" && (
+                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
+                        <div className="text-xl font-bold text-purple-600">112 → 1+1+2 = 4</div>
                       </div>
                     )}
 
