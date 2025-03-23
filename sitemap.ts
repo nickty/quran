@@ -17,7 +17,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/miracles/golden-ratio-study",
     "/miracles/linguistic-symmetry",
     "/miracles/surah-rahman-pattern",
-    "/miracles/surah-ikhlas-structure", // Add the new Surah Al-Ikhlas structure page
+    "/miracles/surah-ikhlas-structure",
+    "/miracles/scientific-references", // Add the new scientific references page
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

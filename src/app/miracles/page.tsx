@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ChevronRight, Star, Code, Calculator, BookOpen, MessageSquare, Repeat } from "lucide-react"
+import { ChevronRight, Star, Code, Calculator, BookOpen, MessageSquare, Repeat, Microscope, Book } from "lucide-react"
 import Link from "next/link"
 
 export default function MiraclesPage() {
@@ -32,6 +32,20 @@ export default function MiraclesPage() {
         { label: "Verses", value: "4" },
         { label: "Words", value: "15" },
         { label: "Letters", value: "47" },
+      ],
+    },
+    {
+      id: "scientific-references",
+      title: "Scientific References in the Quran",
+      description: "Exploring verses that appear to describe scientific phenomena centuries before their discovery.",
+      featured: true,
+      bgPattern:
+        "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50/30 via-background to-background dark:from-blue-950/20",
+      stats: [
+        { label: "Categories", value: "4" },
+        { label: "References", value: "12+" },
+        { label: "Time Span", value: "1400+ years" },
+        { label: "Fields", value: "Multiple" },
       ],
     },
     {
@@ -206,6 +220,15 @@ export default function MiraclesPage() {
                     {miracle.id === "surah-ikhlas-structure" && (
                       <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
                         <div className="text-xl font-bold text-purple-600">112 → 1+1+2 = 4</div>
+                      </div>
+                    )}
+
+                    {miracle.id === "scientific-references" && (
+                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
+                        <div className="flex items-center gap-2">
+                          <Microscope className="h-6 w-6 text-blue-600" />
+                          <Book className="h-6 w-6 text-blue-600" />
+                        </div>
                       </div>
                     )}
 

@@ -119,7 +119,7 @@ export default function AboutPage() {
                     </div>
                     <div className="flex justify-end">
                       <Button variant="ghost" size="sm" className="gap-1" asChild>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
+                        <a href="/miracles/computational-analysis" target="_blank" rel="noopener noreferrer">
                           Read <ExternalLink className="h-3 w-3" />
                         </a>
                       </Button>
@@ -132,7 +132,7 @@ export default function AboutPage() {
                     <div className="text-sm text-muted-foreground">Journal of Religious Mathematics, 2021</div>
                     <div className="flex justify-end">
                       <Button variant="ghost" size="sm" className="gap-1" asChild>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
+                        <a href="/miracles/golden-ratio" target="_blank" rel="noopener noreferrer">
                           Read <ExternalLink className="h-3 w-3" />
                         </a>
                       </Button>

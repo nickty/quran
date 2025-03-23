@@ -173,7 +173,7 @@ export default async function AlFatihaMiraclePage() {
                 <CardDescription>The symmetrical structure of Al-Fatiha</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="relative h-[300px] border rounded-lg p-4">
+                <div className="relative h-[550px] border rounded-lg p-4">
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
                     <div className="w-full max-w-md">
                       {/* Verse 1 */}
