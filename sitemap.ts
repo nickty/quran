@@ -18,7 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/miracles/linguistic-symmetry",
     "/miracles/surah-rahman-pattern",
     "/miracles/surah-ikhlas-structure",
-    "/miracles/scientific-references", // Add the new scientific references page
+    "/miracles/scientific-references",
+    "/miracles/historical-prophecies",
+    "/miracles/number-7-pattern",
+    "/miracles/word-pair-symmetry",
+    "/miracles/prime-number-patterns",
+    "/miracles/astronomical-connections",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

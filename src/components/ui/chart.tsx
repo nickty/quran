@@ -196,3 +196,7 @@ export const ChartLegend = ({ items }: { items: { name: string; color: string }[
   )
 }
 
+export const ChartTooltipContent = () => {
+  return <div>ChartTooltipContent</div>
+}
+

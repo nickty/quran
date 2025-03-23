@@ -1,334 +1,197 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { ChevronRight, Star, Code, Calculator, BookOpen, MessageSquare, Repeat, Microscope, Book } from "lucide-react"
 import Link from "next/link"
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import {
+  Calculator,
+  Ruler,
+  Hash,
+  BarChart2,
+  PieChart,
+  Binary,
+  Globe,
+  Cpu,
+  BookOpen,
+  Languages,
+  Heart,
+  FileText,
+  Microscope,
+  History,
+} from "lucide-react"
 
 export default function MiraclesPage() {
-  // List of miracles
   const miracles = [
     {
-      id: "114-surahs",
-      title: "The Miracle of 114 Surahs",
-      description: "Perfect balance in the structure of the Quran with even and odd numbers.",
-      featured: true,
-      bgPattern:
-        "bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-background to-background",
-      stats: [
-        { label: "Odd Numbers", value: "57" },
-        { label: "Even Numbers", value: "57" },
-        { label: "Sum of Odd", value: "6555" },
-        { label: "Sum of Even", value: "6236" },
-      ],
+      id: "al-fatiha",
+      title: "Mathematical Structure of Surah Al-Fatiha",
+      description: "Exploring the intricate numerical patterns in the opening chapter of the Quran.",
+      icon: <Calculator className="h-5 w-5" />,
+      category: "Mathematics",
+      color: "bg-purple-100 dark:bg-purple-900/20",
+      iconColor: "text-purple-600 dark:text-purple-400",
+      borderColor: "border-purple-200 dark:border-purple-800/30",
+    },
+    {
+      id: "golden-ratio",
+      title: "Golden Ratio in Verse Distribution",
+      description: "Examining how the distribution of verses in the Quran exhibits the divine proportion.",
+      icon: <Ruler className="h-5 w-5" />,
+      category: "Mathematics",
+      color: "bg-amber-100 dark:bg-amber-900/20",
+      iconColor: "text-amber-600 dark:text-amber-400",
+      borderColor: "border-amber-200 dark:border-amber-800/30",
+    },
+    {
+      id: "number-7-pattern",
+      title: "Number 7 Pattern",
+      description: "Investigating the significance and recurrence of the number 7 throughout the Quran.",
+      icon: <Hash className="h-5 w-5" />,
+      category: "Mathematics",
+      color: "bg-green-100 dark:bg-green-900/20",
+      iconColor: "text-green-600 dark:text-green-400",
+      borderColor: "border-green-200 dark:border-green-800/30",
+    },
+    {
+      id: "word-pair-symmetry",
+      title: "Word Pair Symmetry",
+      description: "Analyzing the balanced occurrence of word pairs and opposites in the Quranic text.",
+      icon: <BarChart2 className="h-5 w-5" />,
+      category: "Linguistics",
+      color: "bg-blue-100 dark:bg-blue-900/20",
+      iconColor: "text-blue-600 dark:text-blue-400",
+      borderColor: "border-blue-200 dark:border-blue-800/30",
+    },
+    {
+      id: "prime-number-patterns",
+      title: "Prime Number Patterns",
+      description: "Discovering the relationship between prime numbers and Quranic structure.",
+      icon: <PieChart className="h-5 w-5" />,
+      category: "Mathematics",
+      color: "bg-red-100 dark:bg-red-900/20",
+      iconColor: "text-red-600 dark:text-red-400",
+      borderColor: "border-red-200 dark:border-red-800/30",
+    },
+    {
+      id: "number-19",
+      title: "19-Based Mathematical Structure",
+      description: "Exploring the mathematical miracle based on the number 19 found throughout the Quran.",
+      icon: <Binary className="h-5 w-5" />,
+      category: "Mathematics",
+      color: "bg-indigo-100 dark:bg-indigo-900/20",
+      iconColor: "text-indigo-600 dark:text-indigo-400",
+      borderColor: "border-indigo-200 dark:border-indigo-800/30",
+    },
+    {
+      id: "astronomical-connections",
+      title: "Astronomical Connections",
+      description: "Examining references to celestial bodies and astronomical phenomena in the Quran.",
+      icon: <Globe className="h-5 w-5" />,
+      category: "Science",
+      color: "bg-sky-100 dark:bg-sky-900/20",
+      iconColor: "text-sky-600 dark:text-sky-400",
+      borderColor: "border-sky-200 dark:border-sky-800/30",
+    },
+    {
+      id: "computational-analysis",
+      title: "Numerical Patterns: A Computational Analysis",
+      description: "Using modern computational methods to analyze numerical patterns in the Quran.",
+      icon: <Cpu className="h-5 w-5" />,
+      category: "Computer Science",
+      color: "bg-blue-100 dark:bg-blue-900/20",
+      iconColor: "text-blue-600 dark:text-blue-400",
+      borderColor: "border-blue-200 dark:border-blue-800/30",
+    },
+    {
+      id: "golden-ratio-study",
+      title: "The Golden Ratio in Sacred Texts",
+      description: "A comparative study of mathematical patterns across different religious texts.",
+      icon: <BookOpen className="h-5 w-5" />,
+      category: "Comparative Religion",
+      color: "bg-emerald-100 dark:bg-emerald-900/20",
+      iconColor: "text-emerald-600 dark:text-emerald-400",
+      borderColor: "border-emerald-200 dark:border-emerald-800/30",
+    },
+    {
+      id: "linguistic-symmetry",
+      title: "Linguistic Symmetry and Rhetorical Patterns",
+      description: "Analyzing the linguistic balance and rhetorical structures in the Quranic discourse.",
+      icon: <Languages className="h-5 w-5" />,
+      category: "Linguistics",
+      color: "bg-violet-100 dark:bg-violet-900/20",
+      iconColor: "text-violet-600 dark:text-violet-400",
+      borderColor: "border-violet-200 dark:border-violet-800/30",
+    },
+    {
+      id: "surah-rahman-pattern",
+      title: "Surah Ar-Rahman Pattern",
+      description: "Exploring the unique structural and rhetorical patterns in Surah Ar-Rahman.",
+      icon: <Heart className="h-5 w-5" />,
+      category: "Linguistics",
+      color: "bg-pink-100 dark:bg-pink-900/20",
+      iconColor: "text-pink-600 dark:text-pink-400",
+      borderColor: "border-pink-200 dark:border-pink-800/30",
     },
     {
       id: "surah-ikhlas-structure",
-      title: "Mathematical Marvel of Al-Ikhlas",
-      description: "Exploring the numerical patterns in the 112th chapter of the Quran.",
-      featured: true,
-      bgPattern:
-        "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-50/30 via-background to-background dark:from-purple-950/20",
-      stats: [
-        { label: "Chapter", value: "112" },
-        { label: "Verses", value: "4" },
-        { label: "Words", value: "15" },
-        { label: "Letters", value: "47" },
-      ],
+      title: "Surah Al-Ikhlas Structure",
+      description: "Examining the mathematical and linguistic perfection in one of the shortest chapters.",
+      icon: <FileText className="h-5 w-5" />,
+      category: "Mathematics",
+      color: "bg-teal-100 dark:bg-teal-900/20",
+      iconColor: "text-teal-600 dark:text-teal-400",
+      borderColor: "border-teal-200 dark:border-teal-800/30",
     },
     {
       id: "scientific-references",
       title: "Scientific References in the Quran",
       description: "Exploring verses that appear to describe scientific phenomena centuries before their discovery.",
-      featured: true,
-      bgPattern:
-        "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50/30 via-background to-background dark:from-blue-950/20",
-      stats: [
-        { label: "Categories", value: "4" },
-        { label: "References", value: "12+" },
-        { label: "Time Span", value: "1400+ years" },
-        { label: "Fields", value: "Multiple" },
-      ],
+      icon: <Microscope className="h-5 w-5" />,
+      category: "Science",
+      color: "bg-cyan-100 dark:bg-cyan-900/20",
+      iconColor: "text-cyan-600 dark:text-cyan-400",
+      borderColor: "border-cyan-200 dark:border-cyan-800/30",
     },
     {
-      id: "surah-rahman-pattern",
-      title: "Rhetorical Symmetry of Ar-Rahman",
-      description: "Analysis of the remarkable 31-fold repetition pattern in Surah Ar-Rahman.",
-      featured: true,
-      bgPattern:
-        "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green-50/30 via-background to-background dark:from-green-950/20",
-      stats: [
-        { label: "Repetitions", value: "31" },
-        { label: "Chapter Number", value: "55" },
-        { label: "Total Verses", value: "78" },
-        { label: "Symmetry Type", value: "Bilateral" },
-      ],
-    },
-    {
-      id: "computational-analysis",
-      title: "Computational Analysis",
-      description: "Exploring numerical patterns using modern computational methods and data analysis.",
-      featured: true,
-      bgPattern:
-        "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-100/30 via-background to-background dark:from-blue-900/20",
-      stats: [
-        { label: "Word Pairs", value: "15+" },
-        { label: "Statistical Significance", value: "p < 0.001" },
-        { label: "Methods", value: "NLP, Statistics" },
-        { label: "Data Points", value: "77,430+" },
-      ],
-    },
-    {
-      id: "linguistic-symmetry",
-      title: "Linguistic Symmetry",
-      description: "Analysis of rhetorical patterns and linguistic balance in Quranic discourse.",
-      featured: true,
-      bgPattern:
-        "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50/30 via-background to-background dark:from-blue-950/20",
-      stats: [
-        { label: "Ring Compositions", value: "29" },
-        { label: "Balanced Word Pairs", value: "47" },
-        { label: "Publication Year", value: "2022" },
-        { label: "Statistical Significance", value: "p < 0.001" },
-      ],
-    },
-    {
-      id: "golden-ratio-study",
-      title: "The Golden Ratio in Sacred Texts",
-      description: "A comparative study of the divine proportion across religious texts.",
-      featured: true,
-      bgPattern:
-        "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/30 via-background to-background dark:from-amber-900/20",
-      stats: [
-        { label: "Golden Ratio (φ)", value: "1.618..." },
-        { label: "Sacred Texts", value: "7" },
-        { label: "Time Periods", value: "3,000+ years" },
-        { label: "Statistical Significance", value: "p < 0.001" },
-      ],
-    },
-    {
-      id: "number-19",
-      title: "The Number 19 Pattern",
-      description: "The mathematical code based on the number 19 throughout the Quran.",
-      featured: false,
-      bgPattern:
-        "bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-background to-background",
-      stats: [
-        { label: "Basmalah Letters", value: "19" },
-        { label: "Occurrences", value: "Multiple" },
-      ],
-    },
-    {
-      id: "word-count",
-      title: "Word Count Symmetry",
-      description: "Symmetrical patterns in the count of specific words in the Quran.",
-      featured: false,
-      bgPattern:
-        "bg-[linear-gradient(to_right,_var(--tw-gradient-stops))] from-secondary/10 via-background to-background",
-      stats: [
-        { label: "Word Pairs", value: "Several" },
-        { label: "Symmetry", value: "Perfect" },
-      ],
-    },
-    {
-      id: "golden-ratio",
-      title: "Golden Ratio in the Quran",
-      description: "The presence of the divine proportion (1.618) in the Quran's structure.",
-      featured: false,
-      bgPattern:
-        "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/30 via-background to-background dark:from-amber-900/20",
-      stats: [
-        { label: "Golden Ratio", value: "1.618" },
-        { label: "Occurrences", value: "Multiple" },
-      ],
-    },
-    {
-      id: "al-fatiha",
-      title: "Mathematical Structure of Al-Fatiha",
-      description: "Discover the numerical patterns in the opening chapter of the Quran.",
-      featured: true,
-      bgPattern:
-        "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-background to-background",
-      stats: [
-        { label: "Verses", value: "7" },
-        { label: "Words", value: "29" },
-        { label: "Letters", value: "139" },
-        { label: "Prime Numbers", value: "3" },
-      ],
+      id: "historical-prophecies",
+      title: "Historical Prophecies in the Quran",
+      description: "Examining predictions mentioned in the Quran that were later fulfilled in history.",
+      icon: <History className="h-5 w-5" />,
+      category: "History",
+      color: "bg-amber-100 dark:bg-amber-900/20",
+      iconColor: "text-amber-600 dark:text-amber-400",
+      borderColor: "border-amber-200 dark:border-amber-800/30",
     },
   ]
 
   return (
-    <>
-      {/* Decorative background pattern */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-background to-background"></div>
+    <div className="container mx-auto px-4 py-8">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold text-center mb-2">Quranic Miracles</h1>
+        <p className="text-center text-muted-foreground mb-8">
+          Explore the mathematical, linguistic, and scientific miracles of the Quran
+        </p>
 
-      <div className="container mx-auto px-4 py-8">
-        <div className="text-center mb-12">
-          <h1 className="text-3xl font-bold mb-2">Numerical Miracles in the Quran</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Explore the remarkable mathematical patterns and numerical precision found in the structure and content of
-            the Holy Quran
-          </p>
-        </div>
-
-        {/* Hero Banner with Art */}
-        <div className="relative rounded-lg overflow-hidden mb-12 h-[200px] md:h-[300px]">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20"></div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center p-6 bg-background/80 backdrop-blur-sm rounded-lg max-w-xl">
-              <h2 className="text-2xl font-bold mb-2">Mathematical Precision</h2>
-              <p className="mb-4">Discover the hidden numerical patterns that reveal the divine nature of the Quran</p>
-              <div className="flex justify-center gap-4">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">114</div>
-                  <div className="text-sm">Surahs</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-secondary">6236</div>
-                  <div className="text-sm">Verses</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">19</div>
-                  <div className="text-sm">Key Number</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Decorative elements */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-          <div className="absolute bottom-0 left-0 w-48 h-48 bg-secondary/10 rounded-full translate-y-1/3 -translate-x-1/3"></div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           {miracles.map((miracle) => (
             <Link href={`/miracles/${miracle.id}`} key={miracle.id}>
-              <Card
-                className={`h-full overflow-hidden hover:shadow-md transition-shadow cursor-pointer ${miracle.bgPattern}`}
-              >
-                <div className="aspect-video relative overflow-hidden">
-                  {/* Colored background div */}
-                  <div
-                    className={`aspect-video w-full ${miracle.bgPattern || "bg-primary/5"} flex items-center justify-center`}
-                  >
-                    {/* Keep the decorative elements based on the miracle type */}
-                    {miracle.id === "114-surahs" && (
-                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
-                        <div className="text-2xl font-bold">57 + 57 = 114</div>
-                      </div>
-                    )}
-
-                    {miracle.id === "surah-ikhlas-structure" && (
-                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
-                        <div className="text-xl font-bold text-purple-600">112 → 1+1+2 = 4</div>
-                      </div>
-                    )}
-
-                    {miracle.id === "scientific-references" && (
-                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
-                        <div className="flex items-center gap-2">
-                          <Microscope className="h-6 w-6 text-blue-600" />
-                          <Book className="h-6 w-6 text-blue-600" />
-                        </div>
-                      </div>
-                    )}
-
-                    {miracle.id === "surah-rahman-pattern" && (
-                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
-                        <div className="text-xl font-bold text-green-600">31 Repetitions</div>
-                      </div>
-                    )}
-
-                    {miracle.id === "computational-analysis" && (
-                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
-                        <div className="flex items-center gap-2">
-                          <Code className="h-6 w-6 text-blue-600" />
-                          <Calculator className="h-6 w-6 text-blue-600" />
-                        </div>
-                      </div>
-                    )}
-
-                    {miracle.id === "linguistic-symmetry" && (
-                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
-                        <div className="flex items-center gap-2">
-                          <MessageSquare className="h-6 w-6 text-blue-600" />
-                          <Repeat className="h-6 w-6 text-blue-600" />
-                        </div>
-                      </div>
-                    )}
-
-                    {miracle.id === "golden-ratio-study" && (
-                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
-                        <div className="flex items-center gap-2">
-                          <div className="text-2xl font-bold text-amber-600">φ</div>
-                          <BookOpen className="h-6 w-6 text-amber-600" />
-                        </div>
-                      </div>
-                    )}
-
-                    {miracle.id === "number-19" && (
-                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
-                        <div className="text-4xl font-bold text-primary">19</div>
-                      </div>
-                    )}
-
-                    {miracle.id === "word-count" && (
-                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
-                        <div className="text-xl font-bold">Day = 365</div>
-                      </div>
-                    )}
-
-                    {miracle.id === "golden-ratio" && (
-                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
-                        <div className="text-2xl font-bold text-amber-600">φ = 1.618</div>
-                      </div>
-                    )}
-
-                    {miracle.id === "al-fatiha" && (
-                      <div className="bg-background/70 backdrop-blur-sm p-3 rounded-lg">
-                        <div className="text-2xl font-bold">7 Verses</div>
-                      </div>
-                    )}
+              <Card className={`h-full transition-all hover:shadow-md ${miracle.borderColor} border`}>
+                <CardHeader className={`${miracle.color} rounded-t-lg`}>
+                  <div className="flex justify-between items-start">
+                    <CardTitle className="text-xl">{miracle.title}</CardTitle>
+                    <div className={`p-2 rounded-full ${miracle.color} ${miracle.iconColor}`}>{miracle.icon}</div>
                   </div>
-                  {miracle.featured && (
-                    <div className="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded-full flex items-center">
-                      <Star className="h-3 w-3 mr-1" />
-                      Featured
-                    </div>
-                  )}
-                </div>
-                <CardHeader>
-                  <CardTitle>{miracle.title}</CardTitle>
                   <CardDescription>{miracle.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-2 gap-2">
-                    {miracle.stats.map((stat, index) => (
-                      <div key={index} className="text-center p-2 bg-muted rounded-md">
-                        <div className="text-sm text-muted-foreground">{stat.label}</div>
-                        <div className="font-bold">{stat.value}</div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Button variant="ghost" className="w-full justify-between">
-                    View Details
-                    <ChevronRight className="h-4 w-4" />
-                  </Button>
+                <CardFooter className="pt-4 pb-6">
+                  <Badge variant="outline" className={miracle.iconColor}>
+                    {miracle.category}
+                  </Badge>
                 </CardFooter>
               </Card>
             </Link>
           ))}
         </div>
-
-        <div className="text-center">
-          <p className="text-muted-foreground mb-4">More numerical miracles will be added as research continues</p>
-          <Link href="/">
-            <Button variant="outline">Back to Home</Button>
-          </Link>
-        </div>
       </div>
-    </>
+    </div>
   )
 }
 
