@@ -1,6 +1,7 @@
 import Link from "next/link"
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import {
   Calculator,
   Ruler,
@@ -21,7 +22,7 @@ import {
 export default function MiraclesPage() {
   const miracles = [
     {
-      id: "al-fatiha",
+      id: "mathematical-structure",
       title: "Mathematical Structure of Surah Al-Fatiha",
       description: "Exploring the intricate numerical patterns in the opening chapter of the Quran.",
       icon: <Calculator className="h-5 w-5" />,
@@ -71,7 +72,7 @@ export default function MiraclesPage() {
       borderColor: "border-red-200 dark:border-red-800/30",
     },
     {
-      id: "number-19",
+      id: "19-based-structure",
       title: "19-Based Mathematical Structure",
       description: "Exploring the mathematical miracle based on the number 19 found throughout the Quran.",
       icon: <Binary className="h-5 w-5" />,
@@ -101,7 +102,7 @@ export default function MiraclesPage() {
       borderColor: "border-blue-200 dark:border-blue-800/30",
     },
     {
-      id: "golden-ratio-study",
+      id: "comparative-study",
       title: "The Golden Ratio in Sacred Texts",
       description: "A comparative study of mathematical patterns across different religious texts.",
       icon: <BookOpen className="h-5 w-5" />,
@@ -189,6 +190,32 @@ export default function MiraclesPage() {
               </Card>
             </Link>
           ))}
+          <Card className="group hover:shadow-lg transition-all">
+            <Link href="/miracles/fractal-patterns">
+              <CardHeader>
+                <CardTitle className="group-hover:text-primary transition-colors">
+                  Fractal Patterns in Quranic Structure
+                </CardTitle>
+                <CardDescription>
+                  Exploring self-similar mathematical patterns across different scales in the Quranic text structure
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>
+                  Discover how the Quran exhibits fractal-like properties with self-similarity across different scales
+                  of organization, from letters and words to verses and chapters.
+                </p>
+              </CardContent>
+              <CardFooter>
+                <Button
+                  variant="outline"
+                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                >
+                  Explore Research
+                </Button>
+              </CardFooter>
+            </Link>
+          </Card>
         </div>
       </div>
     </div>
