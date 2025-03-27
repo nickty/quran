@@ -17,6 +17,7 @@ import {
   FileText,
   Microscope,
   History,
+  Clock,
 } from "lucide-react"
 
 export default function MiraclesPage() {
@@ -160,6 +161,16 @@ export default function MiraclesPage() {
       color: "bg-amber-100 dark:bg-amber-900/20",
       iconColor: "text-amber-600 dark:text-amber-400",
       borderColor: "border-amber-200 dark:border-amber-800/30",
+    },
+    {
+      id: "chronological-order",
+      title: "Chronological Order of Revelation",
+      description: "Analyzing how the Quran's message developed over time throughout the revelation period.",
+      icon: <Clock className="h-5 w-5" />,
+      category: "History",
+      color: "bg-orange-100 dark:bg-orange-900/20",
+      iconColor: "text-orange-600 dark:text-orange-400",
+      borderColor: "border-orange-200 dark:border-orange-800/30",
     },
   ]
 
