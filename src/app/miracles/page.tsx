@@ -18,6 +18,7 @@ import {
   Microscope,
   History,
   Clock,
+  BookMarked,
 } from "lucide-react"
 
 export default function MiraclesPage() {
@@ -171,6 +172,16 @@ export default function MiraclesPage() {
       color: "bg-orange-100 dark:bg-orange-900/20",
       iconColor: "text-orange-600 dark:text-orange-400",
       borderColor: "border-orange-200 dark:border-orange-800/30",
+    },
+    {
+      id: "intertextuality",
+      title: "Intertextuality in the Quran",
+      description: "Exploring how the Quran references, reinterprets, and dialogues with earlier scriptures.",
+      icon: <BookMarked className="h-5 w-5" />,
+      category: "Comparative Religion",
+      color: "bg-rose-100 dark:bg-rose-900/20",
+      iconColor: "text-rose-600 dark:text-rose-400",
+      borderColor: "border-rose-200 dark:border-rose-800/30",
     },
   ]
 
