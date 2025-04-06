@@ -1,28 +1,31 @@
+import type React from "react"
 import Link from "next/link"
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import type { Metadata } from "next"
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import {
-  Calculator,
-  Ruler,
-  Hash,
-  BarChart2,
-  PieChart,
-  Binary,
-  Globe,
-  Cpu,
-  BookOpen,
-  Languages,
-  Heart,
-  FileText,
-  Microscope,
-  History,
-  Clock,
-  BookMarked,
-} from "lucide-react"
+import { Calculator, Ruler, Hash, BarChart2, BookOpen, FileText } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Quranic Miracles | Quran Research App",
+  description: "Explore the various numerical, linguistic, and scientific miracles in the Quran.",
+}
+
+interface MiracleCard {
+  id: string // Add the id property
+  title: string
+  description: string
+  category: string
+  link: string
+  isNew?: boolean
+  isComingSoon?: boolean
+  icon?: React.ReactNode
+  color?: string
+  iconColor?: string
+  borderColor?: string
+}
 
 export default function MiraclesPage() {
-  const miracles = [
+  const miraclesList: MiracleCard[] = [
     {
       id: "mathematical-structure",
       title: "Mathematical Structure of Surah Al-Fatiha",
@@ -32,6 +35,7 @@ export default function MiraclesPage() {
       color: "bg-purple-100 dark:bg-purple-900/20",
       iconColor: "text-purple-600 dark:text-purple-400",
       borderColor: "border-purple-200 dark:border-purple-800/30",
+      link: "/miracles/mathematical-structure",
     },
     {
       id: "golden-ratio",
@@ -39,9 +43,8 @@ export default function MiraclesPage() {
       description: "Examining how the distribution of verses in the Quran exhibits the divine proportion.",
       icon: <Ruler className="h-5 w-5" />,
       category: "Mathematics",
-      color: "bg-amber-100 dark:bg-amber-900/20",
-      iconColor: "text-amber-600 dark:text-amber-400",
-      borderColor: "border-amber-200 dark:border-amber-800/30",
+      link: "/miracles/golden-ratio",
+      id: "golden-ratio",
     },
     {
       id: "number-7-pattern",
@@ -49,9 +52,8 @@ export default function MiraclesPage() {
       description: "Investigating the significance and recurrence of the number 7 throughout the Quran.",
       icon: <Hash className="h-5 w-5" />,
       category: "Mathematics",
-      color: "bg-green-100 dark:bg-green-900/20",
-      iconColor: "text-green-600 dark:text-green-400",
-      borderColor: "border-green-200 dark:border-green-800/30",
+      link: "/miracles/number-7-pattern",
+      id: "number-7-pattern",
     },
     {
       id: "word-pair-symmetry",
@@ -59,82 +61,66 @@ export default function MiraclesPage() {
       description: "Analyzing the balanced occurrence of word pairs and opposites in the Quranic text.",
       icon: <BarChart2 className="h-5 w-5" />,
       category: "Linguistics",
-      color: "bg-blue-100 dark:bg-blue-900/20",
-      iconColor: "text-blue-600 dark:text-blue-400",
-      borderColor: "border-blue-200 dark:border-blue-800/30",
+      link: "/miracles/word-pair-symmetry",
+      id: "word-pair-symmetry",
     },
     {
       id: "prime-number-patterns",
       title: "Prime Number Patterns",
-      description: "Discovering the relationship between prime numbers and Quranic structure.",
-      icon: <PieChart className="h-5 w-5" />,
+      description: "Study the relationship between prime numbers and Quranic structure.",
       category: "Mathematics",
-      color: "bg-red-100 dark:bg-red-900/20",
-      iconColor: "text-red-600 dark:text-red-400",
-      borderColor: "border-red-200 dark:border-red-800/30",
+      link: "/miracles/prime-number-patterns",
+      id: "prime-number-patterns",
     },
     {
       id: "19-based-structure",
       title: "19-Based Mathematical Structure",
-      description: "Exploring the mathematical miracle based on the number 19 found throughout the Quran.",
-      icon: <Binary className="h-5 w-5" />,
+      description: "Exploring the comprehensive mathematical system based on the number 19 in the Quran.",
       category: "Mathematics",
-      color: "bg-indigo-100 dark:bg-indigo-900/20",
-      iconColor: "text-indigo-600 dark:text-indigo-400",
-      borderColor: "border-indigo-200 dark:border-indigo-800/30",
+      link: "/miracles/19-based-structure",
+      id: "19-based-structure",
     },
     {
       id: "astronomical-connections",
       title: "Astronomical Connections",
       description: "Examining references to celestial bodies and astronomical phenomena in the Quran.",
-      icon: <Globe className="h-5 w-5" />,
       category: "Science",
-      color: "bg-sky-100 dark:bg-sky-900/20",
-      iconColor: "text-sky-600 dark:text-sky-400",
-      borderColor: "border-sky-200 dark:border-sky-800/30",
+      link: "/miracles/astronomical-connections",
+      id: "astronomical-connections",
     },
     {
       id: "computational-analysis",
       title: "Numerical Patterns: A Computational Analysis",
       description: "Using modern computational methods to analyze numerical patterns in the Quran.",
-      icon: <Cpu className="h-5 w-5" />,
-      category: "Computer Science",
-      color: "bg-blue-100 dark:bg-blue-900/20",
-      iconColor: "text-blue-600 dark:text-blue-400",
-      borderColor: "border-blue-200 dark:border-blue-800/30",
+      category: "Numerical",
+      link: "/miracles/numerical-patterns-computational",
+      isComingSoon: true,
+      id: "computational-analysis",
     },
     {
-      id: "comparative-study",
       title: "The Golden Ratio in Sacred Texts",
       description: "A comparative study of mathematical patterns across different religious texts.",
-      icon: <BookOpen className="h-5 w-5" />,
       category: "Comparative Religion",
-      color: "bg-emerald-100 dark:bg-emerald-900/20",
-      iconColor: "text-emerald-600 dark:text-emerald-400",
-      borderColor: "border-emerald-200 dark:border-emerald-800/30",
+      link: "/miracles/golden-ratio-comparative",
+      isComingSoon: true,
+      id: "golden-ratio-comparative",
     },
     {
-      id: "linguistic-symmetry",
       title: "Linguistic Symmetry and Rhetorical Patterns",
       description: "Analyzing the linguistic balance and rhetorical structures in the Quranic discourse.",
-      icon: <Languages className="h-5 w-5" />,
       category: "Linguistics",
-      color: "bg-violet-100 dark:bg-violet-900/20",
-      iconColor: "text-violet-600 dark:text-violet-400",
-      borderColor: "border-violet-200 dark:border-violet-800/30",
+      link: "/miracles/linguistic-symmetry",
+      isComingSoon: true,
+      id: "linguistic-symmetry",
     },
     {
-      id: "surah-rahman-pattern",
       title: "Surah Ar-Rahman Pattern",
-      description: "Exploring the unique structural and rhetorical patterns in Surah Ar-Rahman.",
-      icon: <Heart className="h-5 w-5" />,
-      category: "Linguistics",
-      color: "bg-pink-100 dark:bg-pink-900/20",
-      iconColor: "text-pink-600 dark:text-pink-400",
-      borderColor: "border-pink-200 dark:border-pink-800/30",
+      description: "Exploring the unique structural and thematic patterns in Surah Ar-Rahman.",
+      category: "Structural",
+      link: "/miracles/surah-ar-rahman",
+      id: "surah-rahman-pattern",
     },
     {
-      id: "surah-ikhlas-structure",
       title: "Surah Al-Ikhlas Structure",
       description: "Examining the mathematical and linguistic perfection in one of the shortest chapters.",
       icon: <FileText className="h-5 w-5" />,
@@ -142,48 +128,69 @@ export default function MiraclesPage() {
       color: "bg-teal-100 dark:bg-teal-900/20",
       iconColor: "text-teal-600 dark:text-teal-400",
       borderColor: "border-teal-200 dark:border-teal-800/30",
+      link: "/miracles/surah-ikhlas-structure",
+      id: "surah-ikhlas-structure",
     },
     {
-      id: "scientific-references",
       title: "Scientific References in the Quran",
-      description: "Exploring verses that appear to describe scientific phenomena centuries before their discovery.",
-      icon: <Microscope className="h-5 w-5" />,
+      description: "Discover scientific facts mentioned in the Quran centuries before their discovery.",
       category: "Science",
-      color: "bg-cyan-100 dark:bg-cyan-900/20",
-      iconColor: "text-cyan-600 dark:text-cyan-400",
-      borderColor: "border-cyan-200 dark:border-cyan-800/30",
+      link: "/miracles/scientific-references",
+      id: "scientific-references",
     },
     {
-      id: "historical-prophecies",
       title: "Historical Prophecies in the Quran",
       description: "Examining predictions mentioned in the Quran that were later fulfilled in history.",
-      icon: <History className="h-5 w-5" />,
       category: "History",
-      color: "bg-amber-100 dark:bg-amber-900/20",
-      iconColor: "text-amber-600 dark:text-amber-400",
-      borderColor: "border-amber-200 dark:border-amber-800/30",
+      link: "/miracles/historical-prophecies",
+      id: "historical-prophecies",
     },
     {
-      id: "chronological-order",
+      title: "Fractal Patterns in Quranic Structure",
+      description: "Investigate self-similar mathematical patterns across different scales in the Quranic text.",
+      category: "Structural",
+      link: "/miracles/fractal-patterns",
+      id: "fractal-patterns", // Add the id here
+    },
+    {
       title: "Chronological Order of Revelation",
       description: "Analyzing how the Quran's message developed over time throughout the revelation period.",
-      icon: <Clock className="h-5 w-5" />,
-      category: "History",
-      color: "bg-orange-100 dark:bg-orange-900/20",
-      iconColor: "text-orange-600 dark:text-orange-400",
-      borderColor: "border-orange-200 dark:border-orange-800/30",
+      category: "Historical",
+      link: "/miracles/chronological-order",
+      isNew: true,
+      id: "chronological-order",
     },
     {
-      id: "intertextuality",
       title: "Intertextuality in the Quran",
       description: "Exploring how the Quran references, reinterprets, and dialogues with earlier scriptures.",
-      icon: <BookMarked className="h-5 w-5" />,
       category: "Comparative Religion",
-      color: "bg-rose-100 dark:bg-rose-900/20",
-      iconColor: "text-rose-600 dark:text-rose-400",
-      borderColor: "border-rose-200 dark:border-rose-800/30",
+      link: "/miracles/intertextuality",
+      id: "intertextuality",
+    },
+    {
+      title: "Thematic Coherence in the Quran",
+      description: "Exploring the interconnectedness of themes and ideas throughout the Quran",
+      icon: <BookOpen className="h-5 w-5" />,
+      category: "Theology",
+      color: "bg-green-100 dark:bg-green-900/20",
+      iconColor: "text-green-600 dark:text-green-400",
+      borderColor: "border-green-200 dark:border-green-800/30",
+      link: "/miracles/thematic-coherence",
+      id: "thematic-coherence",
     },
   ]
+
+  // Group miracles by category
+  const categories = miraclesList.reduce(
+    (acc, miracle) => {
+      if (!acc[miracle.category]) {
+        acc[miracle.category] = []
+      }
+      acc[miracle.category].push(miracle)
+      return acc
+    },
+    {} as Record<string, MiracleCard[]>,
+  )
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -194,7 +201,7 @@ export default function MiraclesPage() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          {miracles.map((miracle) => (
+          {miraclesList.map((miracle) => (
             <Link href={`/miracles/${miracle.id}`} key={miracle.id}>
               <Card className={`h-full transition-all hover:shadow-md ${miracle.borderColor} border`}>
                 <CardHeader className={`${miracle.color} rounded-t-lg`}>
@@ -212,32 +219,6 @@ export default function MiraclesPage() {
               </Card>
             </Link>
           ))}
-          <Card className="group hover:shadow-lg transition-all">
-            <Link href="/miracles/fractal-patterns">
-              <CardHeader>
-                <CardTitle className="group-hover:text-primary transition-colors">
-                  Fractal Patterns in Quranic Structure
-                </CardTitle>
-                <CardDescription>
-                  Exploring self-similar mathematical patterns across different scales in the Quranic text structure
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>
-                  Discover how the Quran exhibits fractal-like properties with self-similarity across different scales
-                  of organization, from letters and words to verses and chapters.
-                </p>
-              </CardContent>
-              <CardFooter>
-                <Button
-                  variant="outline"
-                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
-                >
-                  Explore Research
-                </Button>
-              </CardFooter>
-            </Link>
-          </Card>
         </div>
       </div>
     </div>
